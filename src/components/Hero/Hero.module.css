@@ -1,0 +1,45 @@
+.hero_background {
+    background-image: url('../../assets/images/normal/Hero.png');
+    background-image: image-set(url('../../assets/images/normal/Hero.png') 1x,
+            url('../../assets/images/retina/Hero2x.png') 2x);
+    background-repeat: no-repeat;
+    
+}
+
+.flex {
+        height: 696px;
+
+display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.text {
+    font-weight: 600;
+font-size: 24px;
+line-height: 133%;
+color: #F7F7F7;
+padding-top: 16px;
+padding-bottom: 40px;
+}
+
+.button {
+    border-radius: 200px;
+padding: 16px 60px;
+width: 173px;
+height: 56px;
+background-color: #E44848;
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: -0.01em;
+color: white;
+display: flex;
+  align-items: center;   /* по вертикалі */
+  justify-content: center; /* по горизонталі */
+  white-space: nowrap;
+}
+
+.hero {
+
+}

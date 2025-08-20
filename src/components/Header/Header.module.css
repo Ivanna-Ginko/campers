@@ -1,0 +1,39 @@
+ .navLink {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1;
+    text-align: center;
+    color: #101828;
+    display: inline-block;
+  }
+  .activeLink {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1;
+    text-align: center;
+    color: #D84343;
+    display: inline-block;
+  }
+  .header {
+    display: flex;
+    gap: 450px;
+    border-bottom: 1px solid #F2F4F7;
+    padding: 24px 0;
+    width: 1440px;
+    height: 72px;
+  }
+
+  .nav {
+    display: flex;
+    gap: 32px;
+  }
+
+  .bg {
+    background-color: #F7F7F7;
+  }
+
+  .logo {
+      display: inline-block;
+      width: 136px;
+      height: 16px;
+  }
