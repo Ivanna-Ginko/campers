@@ -1,0 +1,65 @@
+.logo {
+    width: 16px;
+    height: 16px;
+}
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bigbox {
+    display: flex;
+    padding: 24px;
+    gap: 24px;
+    border: 1px solid var(--gray-light);
+    border-radius: 20px;
+    padding: 24px;
+    width: 888px;
+    height: 368px;
+}
+
+.price {
+    font-weight: 600;
+font-size: 24px;
+line-height: 133%;
+color: var(--main);
+}
+
+.img {
+    width: 292px;
+    object-fit: cover;
+}
+.smallbox {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 524px;
+
+}
+
+.first {
+    display: flex;
+justify-content: space-between;
+    padding-top: 12px;
+
+}
+.second {
+    display: flex;
+align-items: center;
+gap: 4px;
+}
+
+.padding {
+    padding-right: 12px;
+}
+
+.descr {
+    font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+color: var(--text);
+white-space: nowrap;    
+  overflow: hidden;       
+  text-overflow: ellipsis;
+}

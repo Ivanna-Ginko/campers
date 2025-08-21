@@ -1,8 +1,11 @@
 import React from 'react'
+import CampersList from '../../components/CampersList/CampersList'
 
 const CatalogPage = () => {
   return (
-    <div>CatalogPage</div>
+    <div>
+      <CampersList/>
+    </div>
   )
 }
 
