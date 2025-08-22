@@ -15,7 +15,7 @@
     border-radius: 20px;
     padding: 24px;
     width: 888px;
-    height: 368px;
+    min-height: 368px;
 }
 
 .price {
@@ -27,6 +27,8 @@ color: var(--main);
 
 .img {
     width: 292px;
+    min-height: 320px;
+    border-radius: 10px;
     object-fit: cover;
 }
 .smallbox {
@@ -40,8 +42,6 @@ color: var(--main);
 .first {
     display: flex;
 justify-content: space-between;
-    padding-top: 12px;
-
 }
 .second {
     display: flex;
