@@ -1,4 +1,5 @@
 :root {
+  box-sizing: border-box;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -51,4 +52,13 @@ button {
 
 p {
 margin: 0;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
 }

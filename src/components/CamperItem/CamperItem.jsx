@@ -2,9 +2,10 @@ import React from 'react'
 import map from '../../assets/icons/Map.svg'
 import star from '../../assets/icons/star.svg'
 import css from './CamperItem.module.css'
-import Button from '../Button/Button'
+import Features from '../Features/Features'
+import AppLink from '../AppLink/Applink'
 
-const CamperItem = ({ img, name, price, marks, location, descr, categories  }) => {
+const CamperItem = ({ id, img, name, price, marks, location, descr, categories, reviews, }) => {
   return (
     <li className={css.bigbox}>
     <img src={img} alt="star" className={css.img}/>
@@ -16,19 +17,14 @@ const CamperItem = ({ img, name, price, marks, location, descr, categories  }) =
         </div>
         <div className={css.second}>
           <img src={star} alt="star" className={css.logo}/>
-          <p className={css.padding}>{marks}</p>
+          <p className={css.padding}>{marks}({reviews.length}reviews)</p>
           <img src={map} alt="map" className={css.logo}/>
           <p>{location}</p>
         </div>
       </div>
       <p className={css.descr}>{descr}</p>
-      <div className={css.categories}>{Object.entries(categories)
-          .filter(([_, value]) => value === true)
-          .map(([key]) => (
-            <p key={key}>{key}</p>
-          ))}
-        </div>
-        <Button>Show more</Button>
+        <Features categories={ categories }/>
+        <AppLink to={`/catalog/${id}`}>Show more</AppLink>
     </div>
     </li>
   )

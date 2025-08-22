@@ -23,12 +23,20 @@ useEffect(() => {
       
       <ul>
          {Array.isArray(campers.items) && campers.items.map(camper => { 
-            const categories = Object.fromEntries(
-    Object.entries(camper).filter(([_, value]) => typeof value === "boolean")
-  );
+           const categories = Object.entries(camper)
+            .filter(([_, value]) => value === true) 
+            .map(([key]) => key); 
+            if (camper.transmission === 'automatic') {
+              categories.push(camper.transmission);
+            }
+            if (camper.engine === 'petrol') {
+              categories.push(camper.engine);
+            }
+            
           return (
         <CamperItem 
         key={camper.id}
+        id = {camper.id}
         img={camper.gallery[0].original}
         name={camper.name}
         price={camper.price}
@@ -36,6 +44,8 @@ useEffect(() => {
         location={camper.location} 
         descr={camper.description}
          categories={categories}
+         reviews = {camper.reviews}
+        
         
         />
           )}
