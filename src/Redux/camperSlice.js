@@ -1,8 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchCampers } from './operations'
+import { fetchCamperById } from './operations'
 
 const initialState = {
     campers: { },
+    selectedCamper: null,
     isLoading: false,
     error: null,
     isFavourite: []
@@ -35,7 +37,18 @@ extraReducers: builder => {
       .addCase(fetchCampers.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
-      });
+      })
+      .addCase(fetchCamperById.pending, state => { 
+        state.isLoading = true; 
+       })
+      .addCase(fetchCamperById.fulfilled, (state, action) => { 
+        state.isLoading = false;
+        state.error = null;
+        state.selectedCamper = action.payload; 
+      })
+      .addCase(fetchCamperById.rejected, (state, action) => { 
+        state.isLoading = false; 
+        state.error = action.payload; });
   },
 });
 

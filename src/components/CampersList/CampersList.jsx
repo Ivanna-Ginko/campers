@@ -26,7 +26,6 @@ const items = Array.isArray(campers?.campers?.items) ? campers.campers.items : [
 if (isLoading) return <p>Loading campers...</p>;
 if (error) return <p>{error}</p>;
 if (!items || items.length === 0) return <p>No campers found</p>;
-
 const visibleItems = items.slice(0, visibleCount);
 
   return (

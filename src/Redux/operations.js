@@ -9,17 +9,31 @@ const formMap = {
   alcove: "alcove",
 };
 
+
+
 export const fetchCampers = createAsyncThunk(
   "campers/fetchAll",
   async (filters = {}, thunkAPI) => {
     try {
       const params = new URLSearchParams();
 
-      if (filters.location) params.append("location", filters.location);
+      if (filters.location) {
+        const loc = filters.location.trim().toLowerCase();
+        const parts = loc.split(',').map(p => p.trim());
+        if (parts.length === 2) {
+          params.append("location", `${parts[1]}, ${parts[0]}`);
+        } else {
+          params.append("location", loc);
+        }
+      }
+
       if (filters.form) {
-        const backendForm = formMap[filters.form];
+        const normalizedForm = filters.form.toLowerCase().replace(" ", "-");
+        const backendForm = formMap[normalizedForm];
         if (backendForm) params.append("form", backendForm);
-      }      if (filters.transmission) params.append("transmission", filters.transmission);
+      }
+
+      if (filters.transmission) params.append("transmission", filters.transmission);
 
       if (filters.features) {
         Object.entries(filters.features).forEach(([key, value]) => {
@@ -27,13 +41,32 @@ export const fetchCampers = createAsyncThunk(
         });
       }
 
-      const response = await axios.get(`/campers?${params.toString()}`);
-      console.log( response.data.items);
+      const url = `/campers?${params.toString()}`;
+      console.log("Fetching campers with URL:", url);
 
-     
-      return { items: Array.isArray(response.data.items) ? response.data.items : [] };
+      const response = await axios.get(url);
+
+      return {
+        items: Array.isArray(response.data.items) ? response.data.items : [],
+      };
     } catch (error) {
-      console.error( error);
+        if (error.response && error.response.status === 404) {
+        return { items: [] };
+      }
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const fetchCamperById = createAsyncThunk(
+  'campers/fetchById',
+  async (id, thunkAPI) => {
+    try {
+      const response = await axios.get(`/campers/${id}`);
+      console.log(response.data)
+      return response.data;
+      
+    } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
   }
