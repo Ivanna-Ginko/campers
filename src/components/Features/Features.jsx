@@ -1,10 +1,10 @@
 import React from 'react'
 import { useOutletContext } from 'react-router-dom';
 import css from './Features.module.css'
-import AcIcon from '../../assets/icons/AC.png'
-import bathroomIcon from '../../assets/icons/Bathroom.png'
+import AcIcon from '../../assets/icons/AC.svg'
+import bathroomIcon from '../../assets/icons/Bathroom.svg'
 import automaticIcon from '../../assets/icons/automatic.svg'
-import cupIcon from '../../assets/icons/cup-hot.png'
+import cupIcon from '../../assets/icons/cup-hot.svg'
 import fridgeIcon from '../../assets/icons/fridge.png'
 import gasIcon from '../../assets/icons/gas.png'
 import microwaveIcon from '../../assets/icons/microwave.png'

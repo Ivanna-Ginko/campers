@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import css from './BookingForm.module.css';
+import Button from '../Button/Button';
 
 const BookingForm = () => {
   const validationSchema = Yup.object({
@@ -43,10 +44,10 @@ const BookingForm = () => {
           <Field className={css.field} name="bookingDate" type="date" placeholder="Booking Date*"/>
           <ErrorMessage name="bookingDate" component="div" className={css.error} />
 
-          <Field className={css.field} as="textarea" name="comment" as="textarea" placeholder="Comment" />
+          <Field className={css.field} as="textarea" name="comment" placeholder="Comment" />
           <ErrorMessage name="comment" component="div" className={css.error} />
 
-          <button type="submit">Submit</button>
+          <Button type="submit">Send</Button>
         </Form>
       </Formik>
     </div>

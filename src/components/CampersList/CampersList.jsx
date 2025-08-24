@@ -2,27 +2,32 @@ import React from 'react'
 import { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { getCampers } from '../../Redux/operations';
+import { fetchCampers } from '../../Redux/operations';
 import CamperItem from '../CamperItem/CamperItem';
 
 const CampersList = () => {
 
   const dispatch = useDispatch();
-  const { campers, isLoading, error } = useSelector((state) => state.campers);
-  console.log(campers.items)
+  const { campers, isLoading, error } = useSelector((state) => state);
+    const filters = useSelector((state) => state.filters); // беремо фільтри з redux
+
+  console.log(campers.campers.items)
 
 useEffect(() => {
-    dispatch(getCampers());
-  }, [dispatch]);
+    dispatch(fetchCampers());
+  }, [dispatch, filters]);
 
+const items = Array.isArray(campers?.campers?.items) ? campers.campers.items : [];
+
+if (isLoading) return <p>Loading campers...</p>;
+if (error) return <p>{error}</p>;
+if (!items || items.length === 0) return <p>No campers found</p>;
 
   return (
     <div>
-      {isLoading && <p>Loading tasks...</p>}
-      {error && <p>{error}</p>}
       
       <ul>
-         {Array.isArray(campers.items) && campers.items.map(camper => { 
+         {Array.isArray(items) && items.map(camper => { 
            const categories = Object.entries(camper)
             .filter(([_, value]) => value === true) 
             .map(([key]) => key); 
@@ -37,14 +42,14 @@ useEffect(() => {
         <CamperItem 
         key={camper.id}
         id = {camper.id}
-        img={camper.gallery[0].original}
-        name={camper.name}
-        price={camper.price}
-        marks={camper.rating}
-        location={camper.location} 
-        descr={camper.description}
-         categories={categories}
-         reviews = {camper.reviews}
+        img={camper.gallery[0]?.original || ""} 
+        name={camper.name || ""}
+        price={camper.price || 0}
+        marks={camper.rating || 0}
+        location={camper.location || ""}
+        descr={camper.description || ""}
+        categories={categories}
+        reviews={camper.reviews || []}
         
         
         />

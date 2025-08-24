@@ -8,12 +8,14 @@ export default function Button({
   onClick,
   style,
   children,
+  type,
 }) {
   return (
     <button
       style={style}
       className={clsx(css.button, css[size], css[variant], css[color])}
       onClick={onClick}
+      type={type}
     >
       {children}
     </button>

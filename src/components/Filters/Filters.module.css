@@ -1,0 +1,76 @@
+
+
+.namefield {
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+color: var(--gray); 
+padding-bottom: 8px;   
+}
+
+.location {
+margin-bottom: 40px;
+border-radius: 12px;
+padding-top: 16px;
+padding-bottom: 16px;
+padding-left: 48px;
+width: 360px;
+height: 56px;
+background: var(--inputs);
+background-image: url('../../assets/icons/Map.svg');
+background-repeat: no-repeat;
+  background-position: 12px center;
+  height: 20px;
+}
+
+.classtype {
+    font-family: var(--font-family);
+font-weight: 600;
+font-size: 20px;
+line-height: 120%;
+color: var(--main);
+padding-bottom: 24px;
+padding-top: 24px;
+border-bottom: solid 1px var(--gray-light);;
+}
+
+.features {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+
+.filterbtn {
+display: flex;
+flex-direction: column;
+align-items: center;    
+justify-content: center;
+border: 1px solid var(--gray-light);
+border-radius: 12px;
+width: 112px;
+height: 96px;
+background-color: transparent;
+flex-wrap: wrap;
+gap: 8px;
+}
+
+span {
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: -0.01em;
+text-align: center;    
+}
+
+.filterbtn.active {
+  border: 1px solid var(--button);
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    fill: black;
+}
+

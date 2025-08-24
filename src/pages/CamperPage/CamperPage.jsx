@@ -53,11 +53,13 @@ console.log(details);
       <p className={css.price}>{camper.price}&euro;</p>
       <div className={css.gallery}>
         {camper.gallery.map((item, index) => (
+          <div className={css.imgWrapper} key={index}>
           <img className={css.img}
             key={index} 
             src={item.original} 
             alt={`${camper.name} ${index + 1}`} 
           />
+         </div>
         ))}
       </div>
       <p className={css.descr}>{camper.description}</p>
