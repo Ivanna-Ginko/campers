@@ -4,8 +4,18 @@ import star from '../../assets/icons/star.svg'
 import css from './CamperItem.module.css'
 import Features from '../Features/Features'
 import AppLink from '../AppLink/Applink'
+import heart from '../../assets/icons/heart.png'
+import redheart from '../../assets/icons/red-heart.svg'
+import { useDispatch, useSelector } from "react-redux";
+import { toggleFavourite } from "../../Redux/camperSlice";
+
 
 const CamperItem = ({ id, img, name, price, marks, location, descr, categories, reviews, }) => {
+  const dispatch = useDispatch();
+  const favourites = useSelector(state => state.campers.isFavourite);
+
+  const isFavourite = favourites.includes(id);
+
   return (
     <li className={css.bigbox}>
     <img src={img} alt="star" className={css.img}/>
@@ -13,7 +23,15 @@ const CamperItem = ({ id, img, name, price, marks, location, descr, categories, 
       <div className={css.element}>
         <div className={css.first}>
           <h3>{name}</h3>
-          <p className={css.price}>{price}&euro;</p>
+          <div className={css.rightspace}>
+              <p className={css.price}>{price}&euro;</p>
+              <button
+                onClick={() => dispatch(toggleFavourite(id))}
+                className={css.favoriteBtn}
+              >
+                <img src={isFavourite ? redheart : heart} className={css.icon} />
+              </button>
+          </div>
         </div>
         <div className={css.second}>
           <img src={star} alt="star" className={css.logo}/>
