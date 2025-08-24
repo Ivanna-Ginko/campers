@@ -5,12 +5,15 @@ import CatalogPage from './pages/CatalogPage/CatalogPage'
 import CamperPage from './pages/CamperPage/CamperPage'
 import Features from './components/Features/Features';
 import Reviews from './components/Reviews/Reviews';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 
 
 function App() {
 
   return (
+    <>
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
@@ -22,6 +25,8 @@ function App() {
         </Route>
       </Route>
     </Routes>
+    <ToastContainer position="top-right" autoClose={3000} />
+    </>
   );
 }
 

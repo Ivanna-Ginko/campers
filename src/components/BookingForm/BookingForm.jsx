@@ -3,6 +3,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import css from './BookingForm.module.css';
 import Button from '../Button/Button';
+import { toast } from "react-toastify";
+
 
 const BookingForm = () => {
   const validationSchema = Yup.object({
@@ -12,10 +14,17 @@ const BookingForm = () => {
     comment: Yup.string()
   });
 
-  const handleSubmit = (values, { resetForm }) => {
-    console.log('Form values:', values);
-    alert('Booking submitted!');
-    resetForm();
+  const handleSubmit = async (values, { resetForm }) => {
+    try {
+      console.log("Form data:", values);
+
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
+      toast.success("Форма успішно відправлена!");
+      resetForm(); 
+    } catch (error) {
+      toast.error("Сталася помилка при відправці!");
+    }
   };
 
   return (

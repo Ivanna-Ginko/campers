@@ -1,6 +1,7 @@
 import React from 'react'
 import css from './Hero.module.css'
 import Container from '../Container/Container'
+import AppLink from '../AppLink/Applink'
 
 const Hero = () => {
   return (
@@ -10,7 +11,7 @@ const Hero = () => {
         <div className={css.hero}>
           <h1>Campers of your dreams</h1>
           <p className={css.text}>You can find everything you want in our catalog</p>
-          <button className={css.button}>View Now</button>
+          <AppLink to={`/catalog`}>View Now</AppLink>
         </div>
       </div>
       </Container>

@@ -9,7 +9,7 @@ const Header = () => {
         isActive ? css.activeLink : css.navLink;
   return (
     <div className={css.bg}>
-      <Container> 
+      
         <div className={css.header}>
             <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                 <img src={logo} alt="Camper logo" className={css.logo}/>
@@ -27,7 +27,7 @@ const Header = () => {
                 </NavLink>
             </nav>
         </div>
-      </Container>
+   
     </div>
   )
 }

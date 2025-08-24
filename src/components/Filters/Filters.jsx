@@ -79,7 +79,7 @@ const Filters = () => {
         />
       </div>
 
-      <div>
+      <div className={css.box}>
         <p className={css.classtype}>Vehicle type</p>
         <div className={css.features}>
           {vehicleTypes.map((type) => (
