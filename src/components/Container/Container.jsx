@@ -1,5 +1,5 @@
 import React, { Children } from 'react'
-import css from './container.module.css'
+import css from './Container.module.css'
 
 const Container = ({ children }) => {
   return (
