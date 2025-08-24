@@ -1,0 +1,89 @@
+.second {
+    display: flex;
+align-items: center;
+gap: 4px;
+}
+
+.padding {
+    padding-right: 12px;
+}
+
+.descr {
+    font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+color: var(--text);
+padding-top: 28px;
+}
+
+.gallery {
+    padding-top: 28px;
+    display: flex;
+    gap: 48px;
+}
+
+.imgWrapper {
+  width: 292px;
+  height: 312px;
+  border-radius: 12px;
+  overflow: hidden; 
+}
+
+.img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center; 
+  display: block;
+}
+
+.price {
+    font-weight: 600;
+font-size: 24px;
+line-height: 133%;
+color: var(--main);
+padding-top: 16px;
+}
+
+.nav {
+    margin-top: 60px;
+    padding-bottom: 24px;
+    display: flex;
+    gap: 40px;
+    border-bottom: solid 1px var(--gray-light);
+}
+
+.link {
+  text-decoration: none;
+font-family: var(--font-family);
+position: relative;  
+font-weight: 600;
+font-size: 20px;
+line-height: 120%;
+color: var(--main);
+display: inline-block;
+}
+
+
+.activeLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -24px; 
+  width: 100%;
+  height: 5px; 
+  background-color: var(--button);
+}
+
+.contentWrapper {
+  display: flex;
+  gap: 40px; 
+}
+
+
+
+.rightColumn {
+  width: 641px; 
+}

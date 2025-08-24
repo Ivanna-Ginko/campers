@@ -1,0 +1,53 @@
+.bigbox {
+    border-radius: 10px;
+padding: 44px 80px;
+width: 631px;
+height: 588px;
+box-sizing: border-box;
+}
+
+.categories {
+border-radius: 100px;
+padding: 12px 18px;
+height: 44px;
+background: var(--badges);
+}
+
+.list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.categ {
+    padding: 0;
+    margin: 0;
+}
+
+.details {
+    padding-top: 100px;
+}
+
+.title {
+    padding-bottom: 24px;
+    border-bottom: solid 1px var(--gray-light);
+    margin-bottom: 24px;
+}
+
+.text {
+display: flex;
+justify-content: space-between;
+padding-bottom: 16px;
+}
+
+.span {
+    font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+text-align: center;
+color: var(--main);
+}
+
