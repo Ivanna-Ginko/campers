@@ -25,7 +25,6 @@ const filtersSlice = createSlice({
       state.location = action.payload;
     },
     setForm: (state, action) => {
-      // для vehicle type (тільки одна кнопка активна, або жодної)
       state.form = state.form === action.payload ? "" : action.payload;
     },
     toggleTransmission: (state) => {
